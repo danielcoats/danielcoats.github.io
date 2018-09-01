@@ -1,8 +1,34 @@
 // Initialise editor.
 var editor = ace.edit('editor');
+editor.session.setOption('indentedSoftWrap', false);
+editor.session.setUseWrapMode(true);
 
-// This is the main undo function.
-var handleLineUndo = function() {
+// This is the main undo function. It determines which region to apply undo to
+// (line or selected region) and invokes the relevant operation.
+var handleUndo = function() {
+  var selection = editor.getSelectionRange();
+  var start = selection.start;
+  var end = selection.end;
+
+  if (start.row === end.row && start.column === end.column) {
+    invokeLineUndo();
+  } else {
+    invokeSelectionUndo(start, end);
+  }
+};
+
+// Handle an undo to a particular selection.
+var invokeSelectionUndo = function(start, end) {
+  // TODO: implement regional undo based on Li and Li.
+  console.log(
+    `Undoing operations in the range {${start.row}, ${start.column}} to {${
+      end.row
+    }, ${end.column}}`,
+  );
+};
+
+// Handle an undo to a line.
+var invokeLineUndo = function() {
   var line = getCursorLine();
   var undoStack = editor.session.getUndoManager().$undoStack;
 
@@ -37,7 +63,7 @@ var handleLineUndo = function() {
 editor.commands.addCommand({
   name: 'lineUndo',
   bindKey: { win: 'Ctrl-Shift-u', mac: 'Command-Shift-u' },
-  exec: handleLineUndo,
+  exec: handleUndo,
   readOnly: false,
 });
 
