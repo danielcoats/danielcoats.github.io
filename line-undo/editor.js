@@ -2,6 +2,7 @@
 var editor = ace.edit('editor');
 editor.session.setOption('indentedSoftWrap', false);
 editor.session.setUseWrapMode(true);
+editor.setShowPrintMargin(false);
 
 // This is the main undo function. It determines which region to apply undo to
 // (line or selected region) and invokes the relevant operation.
