@@ -692,9 +692,7 @@ document.querySelector('.readBytesButtons').addEventListener(
 
 var sampleDocuments = {
   None: '',
-  'Hello world': 'Hello world!',
-  Code: 
-`var fun5kylic6ious9 = function(x, y, z) {
+  Code: `var fun5kylic6ious9 = function(x, y, z) {
     console.log(x);
     console.log(y * 3);
     console.log(z * z * z);
@@ -719,12 +717,11 @@ var argz = 99;
 
 string_multiply("hello");
 `,
-  'Lorem ipsum': 
-`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ex erat, dignissim eget semper tincidunt, lobortis vel leo. Cras non nisi non lectus facilisis ultricies et id orci. Aenean nisi ipsum, dapibus eget erat vel, lacinia tempor ligula. Maecenas non pretium risus, eget lobortis quam. Nunc leo sapien, ullamcorper a pellentesque non, tincidunt tempus enim. Maecenas faucibus euismod lacus et dapibus. Ut id faucibus sem. Quisque a leo vitae quam euismod dapibus in id mauris.
-    
-In vulputate turpis sit amet enim vestibulum, quis lobortis odio bibendum. Suspendisse potenti. Pellentesque ullamcorper auctor blandit. Donec congue diam vitae pulvinar bibendum. Duis in dui vel nisl vulputate consequat id sed quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget porta risus. Sed tincidunt nec justo at feugiat. Integer vestibulum at ligula in mollis. In hac habitasse platea dictumst. Praesent lorem elit, tristique eget vulputate sit amet, interdum a purus. Integer urna lorem, fringilla nec dui ut, finibus suscipit enim. Cras eu posuere eros.
-    
-Suspendisse rutrum nisl vel velit interdum, vel placerat magna interdum. Aliquam fringilla nisi felis, mattis condimentum sem accumsan vel. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin ut turpis tincidunt, consectetur arcu sed, finibus dui. Aenean justo erat, porta ut ultrices nec, commodo nec velit. Quisque et massa molestie, cursus est sed, rutrum sapien. Morbi sagittis lorem at urna posuere scelerisque. Sed sit amet feugiat lorem. Sed aliquet pretium porttitor. Aliquam faucibus nunc id risus sagittis, quis lacinia neque consectetur. Maecenas ultrices dolor sit amet felis euismod porta. Nulla aliquam elementum lorem sed tincidunt. Maecenas tincidunt, libero ac rutrum convallis, mauris est ornare leo, non ultricies quam eros eu arcu. Mauris in sollicitudin nisi.`,
+  Piranhas: `Although most people consider piranhas to be quite dangerous, they are entirely harmless. Piranhas rarely feed on large animals; they eat smaller fish and aquatic plants. 
+
+When confronted with humans, piranhas’ first instinct is to flee, not attack. Their fear of humans makes sense. Piranhas are not an aggressive fish, they are simply group predators that take advaantage of prey when they can. When they are well-fed and in open waters, they rarely attack anything bigger than the small to medium fish that inhabit the same waters.
+ 
+But there are two situations in which a piranha bite is likely. The first is when a frightened piranha is lifted out of the water—for example, if it has been caught in a fishing net. The second is when the water level in pools where piranhas are living falls too low. A large number of fish may be trapped in a single pool, and if they are hungry, they may attack anything that enters the water.`,
 };
 
 var documentSelector = document.getElementById('documentSelector');
