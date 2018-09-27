@@ -696,6 +696,7 @@ var sampleDocuments = {
     console.log(x);
     console.log(y * 3);
     console.log(z * z * z);
+    return null;
 };
 
 var string_multiply = function(word, times) {
@@ -707,7 +708,7 @@ var string_multiply = function(word, times) {
         string += word;
     }
     console.log("testid:83");
-    console.log(string);
+    console.log(string)
     return string;
 };
 
