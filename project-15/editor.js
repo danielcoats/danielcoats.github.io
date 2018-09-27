@@ -10,7 +10,7 @@ editor.focus();
 // Initialise editor content based on local storage.
 editor.session.setValue(localStorage.savedValue || '');
 
-var excludeLinebreaks = localStorage.excludeLinebreaks === 'true' || true;
+var excludeLinebreaks = true;
 
 var undoManager = editor.session.getUndoManager();
 
@@ -314,13 +314,6 @@ var refs = {
   redoButton: document.getElementById('redoButton'),
   lineUndoButton: document.getElementById('lineUndoButton'),
   lineRedoButton: document.getElementById('lineRedoButton'),
-  excludeLinebreaks: document.getElementById('excludeLinebreaks'),
-};
-
-var handleCheckbox = function() {
-  excludeLinebreaks = refs.excludeLinebreaks.checked;
-  localStorage.excludeLinebreaks = excludeLinebreaks;
-  updateToolbar();
 };
 
 // Clear contents of editor and local storage.
@@ -344,7 +337,6 @@ refs.undoButton.addEventListener('click', () => editor.undo(), false);
 refs.redoButton.addEventListener('click', () => editor.redo(), false);
 refs.lineUndoButton.addEventListener('click', handleUndo, false);
 refs.lineRedoButton.addEventListener('click', handleRedo, false);
-refs.excludeLinebreaks.addEventListener('click', handleCheckbox, false);
 
 var updateToolbar = function() {
   refs.saveButton.disabled = editor.session.getUndoManager().isClean();
@@ -352,7 +344,6 @@ var updateToolbar = function() {
   refs.redoButton.disabled = !editor.session.getUndoManager().hasRedo();
   refs.lineUndoButton.disabled = !getEdits(getUndoStack(), getEditLines());
   refs.lineRedoButton.disabled = !getEdits(getRedoStack(), getEditLines());
-  refs.excludeLinebreaks.checked = excludeLinebreaks;
 };
 
 updateToolbar();
@@ -658,6 +649,12 @@ var lastCol = function(g) {
 
 editor.session.on('change', handleChange);
 
+resetEditor = function() {
+  editor.setValue('');
+  undoManager.reset();
+  lineRedoStack = [];
+};
+
 // Load files
 
 function readBlob(opt_startByte, opt_stopByte) {
@@ -696,8 +693,38 @@ document.querySelector('.readBytesButtons').addEventListener(
 var sampleDocuments = {
   None: '',
   'Hello world': 'Hello world!',
-  'Lorem ipsum':
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ex erat, dignissim eget semper tincidunt, lobortis vel leo. Cras non nisi non lectus facilisis ultricies et id orci. Aenean nisi ipsum, dapibus eget erat vel, lacinia tempor ligula. Maecenas non pretium risus, eget lobortis quam. Nunc leo sapien, ullamcorper a pellentesque non, tincidunt tempus enim. Maecenas faucibus euismod lacus et dapibus. Ut id faucibus sem. Quisque a leo vitae quam euismod dapibus in id mauris.\n\nIn vulputate turpis sit amet enim vestibulum, quis lobortis odio bibendum. Suspendisse potenti. Pellentesque ullamcorper auctor blandit. Donec congue diam vitae pulvinar bibendum. Duis in dui vel nisl vulputate consequat id sed quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget porta risus. Sed tincidunt nec justo at feugiat. Integer vestibulum at ligula in mollis. In hac habitasse platea dictumst. Praesent lorem elit, tristique eget vulputate sit amet, interdum a purus. Integer urna lorem, fringilla nec dui ut, finibus suscipit enim. Cras eu posuere eros.\n\nSuspendisse rutrum nisl vel velit interdum, vel placerat magna interdum. Aliquam fringilla nisi felis, mattis condimentum sem accumsan vel. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin ut turpis tincidunt, consectetur arcu sed, finibus dui. Aenean justo erat, porta ut ultrices nec, commodo nec velit. Quisque et massa molestie, cursus est sed, rutrum sapien. Morbi sagittis lorem at urna posuere scelerisque. Sed sit amet feugiat lorem. Sed aliquet pretium porttitor. Aliquam faucibus nunc id risus sagittis, quis lacinia neque consectetur. Maecenas ultrices dolor sit amet felis euismod porta. Nulla aliquam elementum lorem sed tincidunt. Maecenas tincidunt, libero ac rutrum convallis, mauris est ornare leo, non ultricies quam eros eu arcu. Mauris in sollicitudin nisi.',
+  Code: 
+`var fun5kylic6ious9 = function(x, y, z) {
+    console.log(x);
+    console.log(y * 3);
+    console.log(z * z * z);
+};
+
+var string_multiply = function(word, times) {
+    console.log("logging", arguments);
+    times = times || 1;
+    var string = word;
+    for (i = 1; i < times; i++) {
+        string += " ";
+        string += word;
+    }
+    console.log("testid:83");
+    console.log(string);
+    return string;
+};
+
+var argx = 2.71828;
+var argy = 1;
+var argz = 99;
+
+string_multiply("hello");
+`,
+  'Lorem ipsum': 
+`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ex erat, dignissim eget semper tincidunt, lobortis vel leo. Cras non nisi non lectus facilisis ultricies et id orci. Aenean nisi ipsum, dapibus eget erat vel, lacinia tempor ligula. Maecenas non pretium risus, eget lobortis quam. Nunc leo sapien, ullamcorper a pellentesque non, tincidunt tempus enim. Maecenas faucibus euismod lacus et dapibus. Ut id faucibus sem. Quisque a leo vitae quam euismod dapibus in id mauris.
+    
+In vulputate turpis sit amet enim vestibulum, quis lobortis odio bibendum. Suspendisse potenti. Pellentesque ullamcorper auctor blandit. Donec congue diam vitae pulvinar bibendum. Duis in dui vel nisl vulputate consequat id sed quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget porta risus. Sed tincidunt nec justo at feugiat. Integer vestibulum at ligula in mollis. In hac habitasse platea dictumst. Praesent lorem elit, tristique eget vulputate sit amet, interdum a purus. Integer urna lorem, fringilla nec dui ut, finibus suscipit enim. Cras eu posuere eros.
+    
+Suspendisse rutrum nisl vel velit interdum, vel placerat magna interdum. Aliquam fringilla nisi felis, mattis condimentum sem accumsan vel. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin ut turpis tincidunt, consectetur arcu sed, finibus dui. Aenean justo erat, porta ut ultrices nec, commodo nec velit. Quisque et massa molestie, cursus est sed, rutrum sapien. Morbi sagittis lorem at urna posuere scelerisque. Sed sit amet feugiat lorem. Sed aliquet pretium porttitor. Aliquam faucibus nunc id risus sagittis, quis lacinia neque consectetur. Maecenas ultrices dolor sit amet felis euismod porta. Nulla aliquam elementum lorem sed tincidunt. Maecenas tincidunt, libero ac rutrum convallis, mauris est ornare leo, non ultricies quam eros eu arcu. Mauris in sollicitudin nisi.`,
 };
 
 var documentSelector = document.getElementById('documentSelector');
@@ -712,9 +739,8 @@ for (var key in sampleDocuments) {
 
 documentSelector.addEventListener('change', () => {
   if (confirm('Override existing contents?')) {
-    loadingDoc = true;
-    editor.setValue('');
-    loadingDoc = true;
+    resetEditor();
     editor.setValue(sampleDocuments[documentSelector.value]);
+    editor.session.getUndoManager().reset();
   }
 });
