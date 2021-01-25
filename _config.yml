@@ -15,18 +15,24 @@
 # in the templates via {{ site.myvariable }}.
 title: Daniel Coats
 email: daniel@danielcoats.nz
-description: >- # this means to ignore newlines until "baseurl:"
-  Welcome to my blog!
+# description: >- # this means to ignore newlines until "baseurl:"
+# Welcome to my blog!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-# twitter_username: jekyllrb
-github_username:  danielcoats
+
 
 # Build settings
 markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+
+
+# Theme settings
+# linkedin_username: "daniel-coats"
+# twitter_username: jekyllrb
+# github_username:  danielcoats
+
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
