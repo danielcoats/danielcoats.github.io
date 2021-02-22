@@ -1,0 +1,25 @@
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<div class="form-container">
+    <form name="contact" class="contact-form">
+        <label for="emailAddress">Email Address</label>
+        <div class="form-control">
+            <input type="email" name="emailAddress" />
+            <span id="emailError" class="form-message">Not a valid email address</span>
+        </div>
+        <label for="message">Message</label>
+        <div class="form-control">
+            <textarea name="message"></textarea>
+            <span id="messageError" class="form-message">Please write a message</span>
+        </div>
+        <div class="form-control">
+            <div class="g-recaptcha" data-callback="onRecaptchaSuccess" data-sitekey="{% if jekyll.environment == "development" %}6Lc40E4aAAAAAP8e5B07baigoW7GcPu67OnFU5DF{% else %}6Lckx04aAAAAAPv-0rEwrOXM5iYA8mu44BC2qROC{% endif %}"></div>
+            <span id="recaptchaError" class="form-message">Verification required</span>
+        </div>
+        <div class="form-control">
+            <button type="submit" name="submit">Submit</button>
+            <span id="formError" class="form-message">Error sending form</span>
+        </div>
+    </form>
+    <p id="formSuccess" class="form-success">Form sent successfully!</p>
+</div>

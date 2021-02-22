@@ -1,0 +1,55 @@
+---
+---
+
+.form-container {
+  padding-top: 24px;
+  border-top: 1px solid #e8e8e8;
+  margin-top: 24px;
+}
+
+.form-message {
+  border: 1px solid #e8e8e8;
+  background-color: #f7f7f7;
+  padding: 8px 12px;
+  font-size: 14px;
+  display: none;
+  margin-top: 10px;
+}
+
+.form-success {
+  display: none;
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 16px;
+}
+
+.contact-form label {
+  grid-column: 1 / 2;
+  line-height: 40px;
+}
+
+.contact-form .form-control {
+  grid-column: 2 / 3;
+}
+
+.contact-form textarea {
+  width: 100%;
+}
+
+.contact-form input {
+  height: 40px;
+}
+
+.contact-form textarea,
+.contact-form input {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 10px;
+  border: 1px solid #e8e8e8;
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
