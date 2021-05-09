@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Running Training Log: Prototyping the User Interface'
+title: 'Prototyping the User Interface'
 ---
 
 In my previous post, I described [how I train for a running race]({% post_url 2021-04-11-running-training-log-the-idea %}) and how I'm hoping to replicate and streamline that process with an app. But before I get waist deep in JavaScript, I want to step back and sketch out the design, so that I have something to refer back to as I build out the app. In this post, I describe my process for turning an idea into a low-fi prototype.
