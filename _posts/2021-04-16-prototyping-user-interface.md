@@ -3,7 +3,7 @@ layout: post
 title: 'Prototyping the User Interface'
 ---
 
-In my previous post, I described [how I train for a running race]({% post_url 2021-04-11-running-training-log-the-idea %}) and how I'm hoping to replicate and streamline that process with an app. But before I get waist deep in JavaScript, I want to step back and sketch out the design, so that I have something to refer back to as I build out the app. In this post, I describe my process for turning an idea into a low-fi prototype.
+In my previous post, I described [how I train for a running race]({% post_url 2021-04-11-running-training-planner-the-idea %}) and how I'm hoping to replicate and streamline that process with an app. But before I get waist deep in JavaScript, I want to step back and sketch out the design, so that I have something to refer back to as I build out the app. In this post, I describe my process for turning an idea into a low-fi prototype.
 
 I set myself a few loose requirements for this prototype. I wanted to capture the three main screens of the app: the empty state, the training log, and the individual workout edit screen. I decided to design for a desktop web browser first, and revisit mobile later on.
 
@@ -43,18 +43,18 @@ To use the icons, either search on the Font Awesome website, or visit [their che
 
 This is the first screen that a new user will see. It is so tempting to go overboard with this screen, but if Google has taught us anything, it is that sometimes the best design is just a text box.
 
-![Empty state screen](/assets/images/running-training-log/wireframe/empty-state.jpg)
+![Empty state screen](/assets/images/training-planner/wireframe/empty-state.jpg)
 
 ### Training Log
 
 For completeness, I filled in four weeks of training. One of the decisions I made here was to emphasize the current week, and only show a snippet of information for subsequent weeks. This and other decisions will be much easier to validate when I move to a working prototype.
 
-![Training log screen](/assets/images/running-training-log/wireframe/training-log.jpg)
+![Training log screen](/assets/images/training-planner/wireframe/training-log.jpg)
 
 ### Edit Workout
 
 Data input is such a key component of most apps, that I probably spent the most time thinking about this screen. The main question I had (still have) is how much or how little information I need for each training. After all, I could have made it a simple text box. But maybe having the "Type" field as a dropdown or autocomplete, with a separate box for the specific workout, will make inputting data faster.
 
-![Edit workout screen](/assets/images/running-training-log/wireframe/edit-workout.jpg)
+![Edit workout screen](/assets/images/training-planner/wireframe/edit-workout.jpg)
 
 It is far from complete, but at least I now have something that I can begin to implement without having to think too hard about the design. Some ideas are easier to validate in a working prototype, so the design will no doubt evolve. To that end, the next step is to write some code.

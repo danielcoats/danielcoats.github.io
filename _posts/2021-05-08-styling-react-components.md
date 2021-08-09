@@ -3,7 +3,7 @@ layout: post
 title: 'Styling React Components'
 ---
 
-SASS, CSS Modules, custom properties, utility classes... all of these tools solve some problem with CSS, and each has its advocates. But when you have a React component in need of some style, which tool should you reach for? Even for [a small project]({% post_url 2021-04-11-running-training-log-the-idea %}), you don't want to experience decision fatigue every time you need to write some CSS. And ideally, you want a tool, or set of tools, that encourage consistency, especially with regards to colors, sizing, and other common styling concerns.
+SASS, CSS Modules, custom properties, utility classes... all of these tools solve some problem with CSS, and each has its advocates. But when you have a React component in need of some style, which tool should you reach for? Even for [a small project]({% post_url 2021-04-11-running-training-planner-the-idea %}), you don't want to experience decision fatigue every time you need to write some CSS. And ideally, you want a tool, or set of tools, that encourage consistency, especially with regards to colors, sizing, and other common styling concerns.
 
 Here's the solution I ended up with. It is by no means perfect, but hopefully it achieves the objectives above.
 

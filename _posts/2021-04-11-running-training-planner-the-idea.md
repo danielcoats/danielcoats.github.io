@@ -1,6 +1,7 @@
 ---
 layout: post
-title: 'Running Training Log: The Idea'
+title: 'Running Training Planner: The Idea'
+redirect_from: /2021/04/11/running-training-log-the-idea/
 ---
 
 I love my job, but sometimes I want to build something just for the fun of it. Whether to learn a new skill or technology, enhance my resume, or even build a business, side projects have many potential benefits. I've worked on a few, but this time I'd like to try something different: build it in the open, and journal each step. Hopefully I'll learn a thing or two along the way. The idea for the app is simple—but before I get to that, a quick detour into running.
