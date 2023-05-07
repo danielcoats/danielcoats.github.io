@@ -5,4 +5,4 @@
 layout: home
 ---
 
-I’m Daniel Coats, a Software Engineer for Microsoft based in Seattle. I work on the data and compute platform for M365 apps and services. Previously, I worked as a freelance web developer and as founder and developer of [CareerWise](http://careerwise.nz). You can also find me on [GitHub](http://github.com/danielcoats) and [LinkedIn](http://www.linkedin.com/in/daniel-coats). Feel free to [drop me a line](/contact).
+I’m Daniel Coats, a Software Engineer for Microsoft based in Seattle. I work on the data and compute platform for M365 apps and services. Previously, I worked as a freelance web developer and as founder and developer of [CareerWise](https://careerwise.school). You can also find me on [GitHub](http://github.com/danielcoats) and [LinkedIn](http://www.linkedin.com/in/daniel-coats). Feel free to [drop me a line](/contact).
