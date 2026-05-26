@@ -25,7 +25,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
 install_if -> { RUBY_PLATFORM =~ %r!mingw|mswin|java! } do
-  gem "tzinfo", "~> 1.2"
+  gem "tzinfo", "~> 2.0"
   gem "tzinfo-data"
 end
 
@@ -35,6 +35,9 @@ gem "wdm", "~> 0.1.0", :install_if => Gem.win_platform?
 # kramdown v2 ships without the gfm parser by default. If you're using
 # kramdown v1, comment out this line.
 gem "kramdown-parser-gfm"
+
+# Keep html-pipeline's transitive Active Support dependency on a patched release.
+gem "activesupport", ">= 7.2.3.1"
 
 # Fix for https://github.com/jekyll/jekyll/issues/8523
 gem "webrick", "~> 1.7"
