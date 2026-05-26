@@ -3,6 +3,11 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
+description: >-
+  Full-stack and distributed-systems engineer building trading tools and
+  backend microservices in C#/.NET, WPF, TypeScript, React, and Next.js.
 ---
 
-I’m Daniel Coats, a Software Engineer at Microsoft in New York City. I work on the backend data and compute platform for M365 apps and services. Previously, I worked as a freelance web developer and as founder and developer of [CareerWise](https://careerwise.school). You can find some of my code on [GitHub](http://github.com/danielcoats) and see my work experience on [LinkedIn](http://www.linkedin.com/in/daniel-coats) or download my [resume](/files/resume.pdf). Feel free to [drop me a line](/contact).
+I’m a software developer in New York City building trading tools and backend services for [Susquehanna](https://sig.com/). Previously, I was a tech lead for the Microsoft M365 cloud platform, where I worked on APIs, storage systems, and SDKs for M365 Copilot, Search, and Viva Insights. I also founded [CareerWise](https://careerwise.school).
+
+Find me on [GitHub](https://github.com/danielcoats) or [LinkedIn](https://www.linkedin.com/in/daniel-coats). Download my [resume](/files/resume.pdf), or [drop me a line](/contact).

@@ -1,0 +1,43 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body class="home-page">
+    <main class="content home-content" aria-label="Content">
+      <h1>{{ site.title | escape }}</h1>
+
+      {{ content }}
+
+      {% comment %}
+      Writing list. Uncomment when ready to enable.
+
+      {%- if site.posts.size > 0 -%}
+        <section class="posts" aria-labelledby="writing-heading">
+          <h2 id="writing-heading">Writing</h2>
+          <ul class="post-list">
+            {%- for post in site.posts -%}
+              <li>
+                {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: date_format }}</time>
+                <div>
+                  <h3 class="post-title">
+                    <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+                  </h3>
+                  {%- if site.show_excerpts -%}
+                    <div class="summary">{{ post.excerpt }}</div>
+                  {%- endif -%}
+                </div>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </section>
+      {%- endif -%}
+      {% endcomment %}
+    </main>
+  </body>
+
+</html>

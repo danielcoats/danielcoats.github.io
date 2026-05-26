@@ -2,21 +2,28 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
   {%- include head.html -%}
-  
-  <link rel="stylesheet" href="/assets/custom.css">
 
-  <body>
+  <body class="default-page">
+    <main class="content default-content" aria-label="Content">
+      <a class="site-link" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
 
-    {%- include header.html -%}
+      {{ content }}
 
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
+      {%- if page.layout == "post" -%}
+        <footer class="site-footer" aria-label="Footer">
+          <p>
+            <a href="https://github.com/{{ site.github_username }}">GitHub</a>
+            <span class="footer-separator" aria-hidden="true">•</span>
+            <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}/">LinkedIn</a>
+            <span class="footer-separator" aria-hidden="true">•</span>
+            <a href="{{ "/contact/" | relative_url }}">Contact</a>
+          </p>
+          <p class="site-copyright">
+            &copy; {{ 'now' | date: '%Y' }} <a href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+          </p>
+        </footer>
+      {%- endif -%}
     </main>
-
-    {%- include footer.html -%}
-
   </body>
 
 </html>
