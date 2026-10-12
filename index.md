@@ -36,6 +36,6 @@ I co-founded and built CareerWise to help careers advisors at over 20 New Zealan
 
 <footer class="home-footer" markdown="1">
 
-Find me on [GitHub](https://github.com/danielcoats) or [LinkedIn](https://www.linkedin.com/in/daniel-coats). Download my [resume]({{ '/files/resume.pdf' | relative_url }}), or [drop me a line]({{ '/contact/' | relative_url }}){: .contact-link }.
+Find me on [GitHub](https://github.com/danielcoats) or [LinkedIn](https://www.linkedin.com/in/daniel-coats). Download my [resume]({{ '/files/resume.pdf' | relative_url }}), or [get in touch]({{ '/contact/' | relative_url }}){: .contact-link }.
 
 </footer>
